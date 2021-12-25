@@ -1,11 +1,11 @@
 <header class="p-1 bg-dark text-white mb-5">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="{{ route('home') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none fs-3 pr-3" style="margin-right : 30px;">Larcarte </a>
+            <a href="{{ route('home') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none fs-3 pr-3" style="margin-right : 30px;">{{config('app.name')}} </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto pt-2 justify-content-start align-items-center">
-                <li><a href="{{ route('home') }}" class="nav-link px-2 text-white active">Home</a></li>
-                <li><a href="{{ route('about') }}" class="nav-link px-2 text-white">About</a></li>
+                <li><a href="{{ route('home') }}" class="nav-link px-2 text-white {{ $set_active_route('home') }}">Home</a></li>
+                <li><a href="{{ route('about') }}" class="nav-link px-2 text-white {{ $set_active_route('about') }}">About</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Artisans</a></li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle nav-link px-2 text-white" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Planet</a>

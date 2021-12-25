@@ -16,5 +16,5 @@
       </li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
     </ul>
-    <p class="text-center text-muted">&copy; {{date('Y')}} Company, Laracarte</p>
+    <p class="text-center text-muted">&copy; {{date('Y')}} Company, {{config('app.name')}}</p>
 </footer>
