@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts/master',['title'=>'About'])
 
 @section('content')
   <div class="container">
@@ -17,7 +17,7 @@
           </div>
       </div>
 
-      <p>Feel free top help to improve the <a href="#">source code.</a></p>
+      <p>Feel free top help to improve the <a href="https://github.com/TariqIssame/laracarte-Tutoriel" target="_blank">source code.</a></p>
       <hr>
       <h2>What is Laramap ?</h2>
       <p>Laramap is the website by which laracarte was inspired :).</p>
