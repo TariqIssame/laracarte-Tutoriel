@@ -14,7 +14,7 @@
           <li><a class="dropdown-item" href="#">Larachat</a></li>
         </ul>
       </li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+      <li class="nav-item"><a href="{{ route('contacts.create') }}" class="nav-link px-2 text-muted">Contact</a></li>
     </ul>
     <p class="text-center text-muted">&copy; {{date('Y')}} Company, {{config('app.name')}}</p>
 </footer>

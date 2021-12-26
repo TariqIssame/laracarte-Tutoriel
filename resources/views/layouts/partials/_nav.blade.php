@@ -18,7 +18,7 @@
                     <li><a class="dropdown-item" href="#">Larachat</a></li>
                   </ul>
                 </li>
-                <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
+                <li><a href="{{ route('contacts.create') }}" class="nav-link px-2 text-white {{ $set_active_route('contacts.create') }}">Contact</a></li>
             </ul>
  {{-- mb-2 mt-1 mb-md-0 --}}
             <div class="text-end">
