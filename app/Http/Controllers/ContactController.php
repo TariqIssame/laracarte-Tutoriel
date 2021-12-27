@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LaracarteRequestForm;
+
+use App\Mail\ContactMessageCreated;
+
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactController extends Controller
 {
@@ -13,7 +20,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -32,9 +39,13 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LaracarteRequestForm $request)
     {
-        //
+         $mailor = new ContactMessageCreated($request->name,$request->email,$request->message);
+
+         Mail::to("Admin@laracarte.com")->send($mailor);
+
+         return 'Done';
     }
 
     /**

@@ -23,4 +23,15 @@ class Helper {
 
       }
 
+      public static function getErrorColorForm($data,$error) {
+          if(!$error) {
+              if($data != '') {
+                  return 'is-valid';
+              }
+              return '';
+          }else{
+              return 'is-invalid';
+          }
+      }
+
 }
