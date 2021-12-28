@@ -57,7 +57,6 @@ class ContactController extends Controller
               $msgFlashy = 'Sry the email need to be unique , entre another email please';
               $color = 'error';
           }
-          $d = 'success';
 
          Flashy::$color($msgFlashy);
          return Redirect::route('contacts.create');
