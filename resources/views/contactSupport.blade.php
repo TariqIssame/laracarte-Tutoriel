@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <h2>Get In Touch</h2>
-        <p class="text-muted">If you having trouble with service, please <a href="#" class="text-primary">ask for help</a> </p>
+        <p class="text-muted">If you having trouble with service, please <a href="mailto:{{env('ADMIN_EMAIL')}}?subject=Email-Me" class="text-primary">ask for help</a> </p>
 
         <form class="needs-validation" action="{{ route('contacts.store') }}"  method="POST" novalidate>
           @csrf

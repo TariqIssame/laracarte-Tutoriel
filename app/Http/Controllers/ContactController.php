@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+
 use App\Http\Requests\LaracarteRequestForm;
 
 use App\Mail\ContactMessageCreated;
+
+use App\Models\Message;
 
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+
+use MercurySeries\Flashy\Flashy;
 
 class ContactController extends Controller
 {
@@ -41,11 +47,20 @@ class ContactController extends Controller
      */
     public function store(LaracarteRequestForm $request)
     {
-         $mailor = new ContactMessageCreated($request->name,$request->email,$request->message);
+          try{
+              $message = Message::create($request->only('name','email','message'));
+              $msgFlashy = 'Your email has been sent';
+              $color = 'success';
+              Mail::to(env('ADMIN_EMAIL'))->send(new ContactMessageCreated($message));
 
-         Mail::to("Admin@laracarte.com")->send($mailor);
+          }catch(Exception $e){
+              $msgFlashy = 'Sry the email need to be unique , entre another email please';
+              $color = 'error';
+          }
+          $d = 'success';
 
-         return 'Done';
+         Flashy::$color($msgFlashy);
+         return Redirect::route('contacts.create');
     }
 
     /**
